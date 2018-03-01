@@ -1,6 +1,3 @@
-
-
-
 class AccountInfo:
 
     def __init__(self, api):
