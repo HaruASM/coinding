@@ -7,7 +7,7 @@ from contextlib import closing
 from datetime import datetime
 from flask import render_template
 from flask import request
-from flask import json
+from flask import jsonify
 from HelloFlask import app
 
 @app.route('/')
