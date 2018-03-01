@@ -13,6 +13,7 @@ from HelloFlask import app
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
+        print("POST message received")
         return jsonify(data="세준아수고가많다")
 
     else:
