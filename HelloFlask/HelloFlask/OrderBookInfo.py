@@ -22,4 +22,7 @@ class OrderBookInfo:
     def GetBidList(self):
         return m_lbid
 
+    def __str__(self, **kwargs):
+        #return super().__str__(**kwargs)
+        return "ASK LIST"+self.m_lask+" BID LIST"+self.m_lbid
     
