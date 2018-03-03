@@ -6,17 +6,24 @@ from __future__ import with_statement
 from contextlib import closing
 from datetime import datetime
 from flask import render_template
+from flask import request
+from flask import jsonify
 from HelloFlask import app
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-    """Renders the home page."""
-    return render_template(
-        'index.html',
-        title='Home Page',
-        year=datetime.now().year        
-    )
+    if request.method == 'POST':
+        print("POST message received")
+        return jsonify(data="세준아수고가많다")
+
+    else:
+        """Renders the home page."""
+        return render_template(
+            'index.html',
+            title='Home Page',
+            year=datetime.now().year        
+        )
 
 @app.route('/contact')
 def contact():

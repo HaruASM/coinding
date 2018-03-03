@@ -37,6 +37,9 @@
     <Compile Include="HelloFlask\OrderBookInfo.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HelloFlask\TradingSystem.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="HelloFlask\__init__.py" />
     <Compile Include="HelloFlask\views.py" />
