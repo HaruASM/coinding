@@ -4,39 +4,51 @@
     <meta charset="utf-8">
     <title>코인 TF 냐하</title>
     <link rel="stylesheet" type="text/css" href="/static/content/main.css">
-    <link rel>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400%7COswald:300,400%7CRaleway:400,700" rel="stylesheet">
     <link rel="shortcut icon" href="/static/images/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_green-light_blue.min.css">
+    
+    
     <script type="text/javascript" src="/static/scripts/index.js"></script>
   </head>
   <body>
-    <div class="head">
-    </div>
     <div class="mdl-layout__container">
       <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <!-- 헤더-->
         <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-          <div class="mdl-layout__header-row"><a href="index.html" class="mdl-navigation__link">
-              <button class="mdl-layout-title mdl-button mdl-js-button mdl-js-ripple-effect">Home</button></a>
+          <div class="mdl-layout__header-row">
+            <!-- home--><a href="index.html" class="mdl-navigation__link">
+              <button class="mdl-layout-title mdl-button">Home</button></a>
+            <!-- 알림 --><span style="cursor: pointer;" id="noti-inbox">Inbox</span>
+            <ul for="noti-inbox" class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-left">
+              <li class="mdl-menu__item">Read</li>
+              <li class="mdl-menu__item">Delete</li>
+              <li class="mdl-menu__item">Popup</li>
+            </ul>
+            
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-              <label for="search" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">search</i></label>
+              <label for="header-search" id="header-search-menu" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">search</i></label>
+              <div for="header-search-menu" class="mdl-tooltip">searching</div>
               <div class="mdl-textfield__expandable-holder">
-                <input type="text" id="search" class="mdl-textfield__input">
-                <label for="search" class="mdl-textfield__label">Enter your query...</label>
+                <input type="text" id="header-search" class="mdl-textfield__input">
+                <label for="header-search" class="mdl-textfield__label">Enter your query...</label>
               </div>
             </div>
-            <button id="hdrbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons">more_vert</i></button>
-            <ul for="hdrbtn" class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right">
+            <button id="header-redeem" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="mdl-color-text--blue-grey-400 material-icons">local_offer</i></button>
+            <div for="header-redeem" class="mdl-tooltip">redeem</div>
+            <button id="header-build" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons mdl-color-text--blue-grey-600">forum</i></button>
+            <div for="header-build" class="mdl-tooltip">fail action need fix</div>
+            <button id="header-abouts" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons">more_vert</i></button>
+            <ul for="header-abouts" class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right">
               <li class="mdl-menu__item">About</li>
               <li class="mdl-menu__item">Contact</li>
               <li class="mdl-menu__item">information</li>
             </ul>
           </div>
         </header>
-        <div class="demo-drawer mdl-layout__drawer mdl-color-text--grey-900">
+        <div class="demo-drawer mdl-layout__drawer">
           <header id="navtop" class="demo-drawer-header"><img src="/static/images/user.jpg" class="demo-avatar">
             <div class="demo-avatar-dropdown"><span>hello@example.com</span>
               <div class="mdl-layout-spacer"></div>
@@ -50,14 +62,23 @@
               </ul>
             </div>
           </header>
-          <nav id="navbottom" class="demo-navigation mdl-navigation"><a href="" class="mdl-navigation__link">Home</a><a href="" class="mdl-navigation__link">Inbox</a><a href="" class="mdl-navigation__link">Trash</a><a href="" class="mdl-navigation__link">report</a><a href="" class="mdl-navigation__link">Forums</a><a href="" class="mdl-navigation__link">Updates</a><a href="" class="mdl-navigation__link">Promos</a><a href="" class="mdl-navigation__link">Purchases</a><a href="" class="mdl-navigation__link">Social</a>
-            <!--.mdl-layout-spacer--><a href="" class="mdl-navigation__link"><i role="presentation" class="mdl-color-text--blue-grey-700 material-icons">help_outline</i><span class="visuallyhidden">Help</span></a>
+          <nav id="navbottom" class="demo-navigation mdl-navigation"><a href="" class="mdl-navigation__link">Home</a><a href="" class="mdl-navigation__link">Inbox</a><a href="" class="mdl-navigation__link">Trash</a><a href="" class="mdl-navigation__link"><i role="presentation" class="mdl-color-text--blue-grey-700 material-icons">help_outline</i><span>Help</span>
+              <!--span.visuallyhidden Help-->
+              </a>
           </nav>
         </div>
+        <main class="mdl-layout__content mdl-color--grey-100">
+          <div class="mdl-grid demo-content">
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#piechart" mask="url(#piemask)"></use>
+                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82</text>
+                <tspan font-size="0.2" dy="-0.07">%</tspan>
+              </svg>
+            </div>
+          </div>
+        </main>
       </div>
-    </div>
-    <div class="main">
-      <p>index</p>
     </div>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </body>

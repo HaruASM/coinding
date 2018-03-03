@@ -18,6 +18,11 @@ html, body {
 .demo-drawer {
   border: none;
 }
+.mdl-layout__drawer.is-visible {
+  width: 190px;
+}
+
+
 /* iOS Safari specific workaround */
 .demo-drawer .mdl-menu__container {
   z-index: -1;
@@ -48,6 +53,7 @@ html, body {
   padding: 16px;
   height: 101px;
 }
+
 .demo-avatar-dropdown {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -215,3 +221,7 @@ _:-ms-input-placeholder, :root .demo-graph {
   padding-top : 12px;
   padding-bottom : 12px;
 }
+
+goog-zippy-header {
+    cursor: pointer;
+  }
