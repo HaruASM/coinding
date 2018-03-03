@@ -48,7 +48,7 @@ class KucoinAPI(BaseAPI):
     def GetOrderBook(self):
         #sess= requests.session()
         #res= sess.get(self.BaseURL+"orders")
-        #api_url= self.BaseURL+"orders?symbol={symbol}"
+        #api_url= self.BaseURL+"orders?symbol={symbol}"        
         api_url= self.BaseURL+"orders?symbol="+self.testsymbol
         
         api_url.format(symbol= self.testsymbol)

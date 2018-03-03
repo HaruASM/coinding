@@ -8,12 +8,13 @@ from datetime import datetime
 from flask import render_template
 from flask import request
 from flask import jsonify
-from HelloFlask import app
+from HelloFlask import *
 
 @app.route('/')
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     
+    trading.RunSimulation()
     if request.method == 'POST':
         print("POST message received")
         return jsonify(data="세준아수고가많다")
