@@ -385,3 +385,7 @@ __pycache__/
 
 
 /HelloFlask/Flask_env/
+
+# 최세준 추가
+/HelloFlask/HelloFlask/pug/
+/HelloFlask/templates/static/
