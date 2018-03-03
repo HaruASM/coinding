@@ -17,7 +17,7 @@ def home():
     trading.RunSimulation()
     if request.method == 'POST':
         print("POST message received")
-        return jsonify(data="세준아수고가많다")
+        return jsonify(data="1807" , code=5)
 
     else:
         """Renders the home page."""
